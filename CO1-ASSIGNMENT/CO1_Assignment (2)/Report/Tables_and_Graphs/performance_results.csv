@@ -1,0 +1,49 @@
+algorithm,dataset_size,test_case,preprocessing_seconds,search_seconds,key_comparisons,explicit_lookup_operations,found,correct,notes
+Linear Search,1000,first,0.000000000,0.000000600,1,,True,True,
+Linear Search,1000,middle,0.000000000,0.000020900,501,,True,True,
+Linear Search,1000,last,0.000000000,0.000070400,1000,,True,True,
+Linear Search,1000,absent,0.000000000,0.000061300,1000,,False,True,
+Recursive Binary Search,1000,first,0.000012400,0.000002200,17,,True,True,
+Recursive Binary Search,1000,middle,0.000012400,0.000001800,17,,True,True,
+Recursive Binary Search,1000,last,0.000012400,0.000002500,19,,True,True,
+Recursive Binary Search,1000,absent,0.000012400,0.000002400,20,,False,True,
+Hash Table,1000,first,0.000071100,0.000000300,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000,middle,0.000071100,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000,last,0.000071100,0.000000200,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000,absent,0.000071100,0.000000200,,1,False,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Linear Search,10000,first,0.000000000,0.000000400,1,,True,True,
+Linear Search,10000,middle,0.000000000,0.000215700,5001,,True,True,
+Linear Search,10000,last,0.000000000,0.000414600,10000,,True,True,
+Linear Search,10000,absent,0.000000000,0.000452000,10000,,False,True,
+Recursive Binary Search,10000,first,0.000103900,0.000001900,25,,True,True,
+Recursive Binary Search,10000,middle,0.000103900,0.000001900,25,,True,True,
+Recursive Binary Search,10000,last,0.000103900,0.000002700,27,,True,True,
+Recursive Binary Search,10000,absent,0.000103900,0.000003200,28,,False,True,
+Hash Table,10000,first,0.000394800,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,10000,middle,0.000394800,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,10000,last,0.000394800,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,10000,absent,0.000394800,0.000000100,,1,False,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Linear Search,100000,first,0.000000000,0.000000500,1,,True,True,
+Linear Search,100000,middle,0.000000000,0.002202700,50001,,True,True,
+Linear Search,100000,last,0.000000000,0.005571500,100000,,True,True,
+Linear Search,100000,absent,0.000000000,0.006166500,100000,,False,True,
+Recursive Binary Search,100000,first,0.001044000,0.000002500,31,,True,True,
+Recursive Binary Search,100000,middle,0.001044000,0.000002500,31,,True,True,
+Recursive Binary Search,100000,last,0.001044000,0.000002400,33,,True,True,
+Recursive Binary Search,100000,absent,0.001044000,0.000002800,34,,False,True,
+Hash Table,100000,first,0.004810000,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,100000,middle,0.004810000,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,100000,last,0.004810000,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,100000,absent,0.004810000,0.000000100,,1,False,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Linear Search,1000000,first,0.000000000,0.000000200,1,,True,True,
+Linear Search,1000000,middle,0.000000000,0.027805700,500001,,True,True,
+Linear Search,1000000,last,0.000000000,0.052168300,1000000,,True,True,
+Linear Search,1000000,absent,0.000000000,0.063023700,1000000,,False,True,
+Recursive Binary Search,1000000,first,0.014789800,0.000002500,37,,True,True,
+Recursive Binary Search,1000000,middle,0.014789800,0.000003300,37,,True,True,
+Recursive Binary Search,1000000,last,0.014789800,0.000003500,39,,True,True,
+Recursive Binary Search,1000000,absent,0.014789800,0.000003800,40,,False,True,
+Hash Table,1000000,first,0.043282100,0.000000200,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000000,middle,0.043282100,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000000,last,0.043282100,0.000000100,,1,True,True,Python dict internal equality/probe count not exposed; one get lookup timed.
+Hash Table,1000000,absent,0.043282100,0.000000100,,1,False,True,Python dict internal equality/probe count not exposed; one get lookup timed.
