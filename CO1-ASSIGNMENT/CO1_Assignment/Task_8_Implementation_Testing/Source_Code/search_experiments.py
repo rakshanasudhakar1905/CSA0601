@@ -1,16 +1,4 @@
-"""
-CO1 Assignment benchmark: iterative linear search, recursive binary search,
-and Python dictionary/hash-table search.
-
-Run from repository root:
-    python Task_8_Implementation_Testing/Source_Code/search_experiments.py
-
-Outputs are written to Report/Tables_and_Graphs.
-Measured values depend on the machine and Python version; use actual outputs
-in the report. Dictionary internals do not expose reliable key-comparison counts.
-"""
 from __future__ import annotations
-
 import csv
 import statistics
 import sys
@@ -51,11 +39,11 @@ def recursive_binary_search(
         return -1, 0
 
     mid = low + (high - low) // 2
-    comparisons = 1  # equality comparison: records[mid] == target
+    comparisons = 1  
     if records[mid] == target:
         return mid, comparisons
 
-    comparisons += 1  # direction comparison: target < records[mid]
+    comparisons += 1  
     if target < records[mid]:
         index, nested = recursive_binary_search(records, target, low, mid - 1)
     else:
@@ -110,7 +98,6 @@ def run() -> None:
     print()
 
     for n in SIZES:
-        # Unique, sorted integer registration numbers.
         records = list(range(1_000_000, 1_000_000 + n))
         cases = [
             ("first", records[0], True),
@@ -119,7 +106,6 @@ def run() -> None:
             ("absent", 9_999_999_999, False),
         ]
 
-        # Linear search needs no preprocessing.
         linear_prep = 0.0
         for case, target, expected_found in cases:
             result, comparisons = linear_search(records, target)
@@ -131,8 +117,6 @@ def run() -> None:
                 comparisons, result != -1, correct
             )
 
-        # The generated list is already sorted; measure a real copy+sort as
-        # preprocessing so sorting cost is represented without mutating input.
         sort_start = time.perf_counter()
         sorted_records = sorted(records, reverse=True)
         sorted_records.sort()
@@ -150,7 +134,6 @@ def run() -> None:
                 seconds, comparisons, result != -1, correct
             )
 
-        # Build a dictionary once; measure the index construction separately.
         hash_start = time.perf_counter()
         index = {key: key for key in records}
         hash_prep = time.perf_counter() - hash_start
@@ -158,7 +141,6 @@ def run() -> None:
         for case, target, expected_found in cases:
             result = index.get(target)
             found = target in index
-            # Do not claim internal dictionary comparisons are measurable.
             correct = (found == expected_found) and (
                 (result == target) if expected_found else result is None
             )
@@ -177,8 +159,6 @@ def run() -> None:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
-
-    # Graph 1: median search time by size and algorithm, averaging the four cases.
     algorithms = ["Linear Search", "Recursive Binary Search", "Hash Table"]
     summary = {}
     for algorithm in algorithms:
@@ -205,7 +185,6 @@ def run() -> None:
     plt.savefig(OUTPUT_DIR / "execution_time.png", dpi=160)
     plt.close()
 
-    # Graph 2: explicit key comparison counts for linear and binary search.
     plt.figure(figsize=(9, 6))
     for algorithm in ["Linear Search", "Recursive Binary Search"]:
         means = []
@@ -230,7 +209,6 @@ def run() -> None:
     plt.savefig(OUTPUT_DIR / "comparison_count.png", dpi=160)
     plt.close()
 
-    # Graph 3: preprocessing cost.
     plt.figure(figsize=(9, 6))
     for algorithm in algorithms:
         prep_values = []
@@ -262,13 +240,10 @@ def run() -> None:
     print(f"Total benchmark rows: {len(rows)}")
     print("Correctness: all tests passed." if not incorrect else f"WARNING: {len(incorrect)} incorrect rows.")
 
-    # A compact summary useful when capturing the terminal screenshot.
     print("\nMean search time by algorithm and dataset size (seconds):")
     for algorithm in algorithms:
         print(f"\n{algorithm}")
         for n, value in zip(SIZES, summary[algorithm]):
             print(f"  n={n:>7,}: {value:.9f}")
-
-
 if __name__ == "__main__":
     run()
