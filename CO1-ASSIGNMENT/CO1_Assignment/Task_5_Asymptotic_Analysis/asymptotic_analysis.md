@@ -20,8 +20,6 @@ For illustration, consider the following theoretical operation counts.
 | 100,000 | 100,000 | 17 | Constant |
 | 1,000,000 | 1,000,000 | 20 | Constant |
 
-The binary counts are \(\lceil\log_2(n+1)\rceil\), a convenient upper bound for the number of comparisons.
-
 When n grows from 1,000 to 1,000,000, n grows by a factor of 1,000. Linear worst-case comparisons can grow by roughly 1,000 times. Binary search needs around 10 additional halvings because log₂(1,000,000) is about 20 and log₂(1,000) is about 10. Expected hash lookup remains approximately independent of n under ordinary assumptions, but its memory and index-construction costs grow linearly.
 
 Do not treat Big-O as an exact timing prediction. It describes growth for sufficiently large n, not hardware-specific seconds.
