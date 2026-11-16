@@ -11,3 +11,57 @@ A simplified recurrence is:
 T(n) = T(n/2) + c, for n > 1
 T(1) = d
 where c and d are constants. For exact integer intervals, floor/ceiling terms may be used; they do not change the asymptotic result.
+The recurrence relation is formulated for the Recursive Binary Search algorithm.
+
+Step 1: Identify the input size
+
+Let:
+\[
+n=\text{Number of records in the current search interval}
+\]
+
+Step 2: Identify the recursive subproblem
+
+Binary Search divides the dataset into two halves and continues searching only one half.
+
+Therefore:
+\[
+\text{Subproblem size}=\frac{n}{2}
+\]
+
+Step 3: Identify the number of recursive calls
+
+Only one recursive call is executed in each step.
+\[
+a=1
+\]
+
+Step 4: Identify the work outside recursion
+
+The algorithm calculates the middle position and performs a constant number of comparisons.
+
+Therefore:
+\[
+f(n)=c
+\]
+
+Step 5: Identify the base case
+
+When the search interval becomes empty, the record is not found.
+\[
+T(0)=c_0
+\]
+
+When one element remains, the algorithm performs a constant amount of work.
+\[
+T(1)=c_1
+\]
+
+Step 6: Formulate the recurrence
+
+Combining these components:
+\[
+\boxed{T(n)=T(n/2)+c}
+\]
+
+Where \(c\) represents constant work performed during each recursive call.
