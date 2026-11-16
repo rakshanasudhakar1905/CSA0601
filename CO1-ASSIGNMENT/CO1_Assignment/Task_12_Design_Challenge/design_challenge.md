@@ -6,7 +6,7 @@ The university now needs to process 50,000 search requests per hour using a data
 New student records are added only once per day.
 
 The original design must be re-evaluated to determine whether it should be retained, modified or redesigned.
-TASK 12A – Impact Analysis (2 Marks)
+TASK 12A – Impact Analysis 
 1. Changes in Requirements
 Original requirement	Changed requirement
 Dataset size varies	Fixed database of 1,000,000 records
@@ -108,4 +108,3 @@ ALGORITHM OPTIMIZED_STUDENT_SEARCH
 15.     UPDATE HASH_TABLE with new records
 
 16. STOP
-17. 
