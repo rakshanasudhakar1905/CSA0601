@@ -10,3 +10,34 @@ For repeated exact-match lookup by a unique registration number, a hash-based in
 
 ## Evidence required
 Insert measured timings from the benchmark. State the machine/Python environment, include preprocessing cost, and explain why the chosen structure suits the measured workload. Do not select an algorithm based on Big-O alone.
+
+##  Recommended Algorithm
+
+The recommended approach for repeated student-record retrieval is Hash Table Search.
+
+### Reasons for Selection
+
+1. Hash Table Search provides expected constant-time lookup.
+2. It does not require sorting student records.
+3. It supports frequent registration-number searches.
+4. The hash table can be constructed once and reused.
+5. It is suitable for large student databases.
+
+###  Theoretical Efficiency
+
+| Operation | Complexity |
+|---|---|
+| Hash table construction | \(\Theta(n)\) expected |
+| Successful lookup | \(\Theta(1)\) expected |
+| Unsuccessful lookup | \(\Theta(1)\) expected |
+| Worst-case lookup | \(O(n)\) |
+
+### Trade-offs
+
+- Hash tables require additional memory.
+- Hash table construction takes time.
+- Collisions may reduce lookup efficiency.
+- Updates must be reflected in the hash table.
+
+###  Final Recommendation
+Hash Table Search is recommended because the university requires efficient retrieval of student information using unique registration numbers. Its expected constant-time lookup provides an advantage for repeated searches on large datasets. Although the hash table requires additional memory and preprocessing, these costs can be justified when the index is reused for many search operations.
