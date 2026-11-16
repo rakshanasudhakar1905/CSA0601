@@ -27,9 +27,9 @@ The recommended approach for repeated student-record retrieval is Hash Table Sea
 
 | Operation | Complexity |
 |---|---|
-| Hash table construction | \(\Theta(n)\) expected |
-| Successful lookup | \(\Theta(1)\) expected |
-| Unsuccessful lookup | \(\Theta(1)\) expected |
+| Hash table construction | \(O(n)\)expected |
+| Successful lookup | \(O(n)\) expected |
+| Unsuccessful lookup | \(O(n)\) expected |
 | Worst-case lookup | \(O(n)\) |
 
 ### Trade-offs
