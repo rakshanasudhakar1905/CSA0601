@@ -21,7 +21,7 @@ The recurrence relation is formulated for the Recursive Binary Search algorithm.
 Let:
 
 \[
-n = \text{Number of records in the current search interval}
+n = Number of records in the current search interval
 \]
 
 ### Step 2: Identify the Recursive Subproblem
@@ -31,7 +31,7 @@ Binary Search divides the dataset into two halves and continues searching only o
 Therefore:
 
 \[
-\text{Subproblem size} = \frac{n}{2}
+Subproblem size = n/2
 \]
 
 ### Step 3: Identify the Number of Recursive Calls
