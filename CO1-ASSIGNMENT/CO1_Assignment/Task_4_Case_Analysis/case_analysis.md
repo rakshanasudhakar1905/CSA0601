@@ -14,5 +14,6 @@
 - Best/expected: hash maps directly to a bucket/slot with no significant collision chain; expected Θ(1).
 - Average: with a suitable hash distribution and controlled load factor, expected Θ(1).
 - Worst: many keys collide or the structure suffers pathological probing; Θ(n) is possible.
+  Comparison Table
 
 Case analysis assumes unique registration numbers. For linear search, an absent key is a worst-case input. For binary search, the array must be sorted. For a dictionary, report the expected-case assumption rather than claiming a deterministic constant-time worst-case bound.
