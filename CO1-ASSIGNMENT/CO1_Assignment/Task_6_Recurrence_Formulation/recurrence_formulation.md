@@ -71,7 +71,7 @@ T(1) = c_1
 Combining these components:
 
 \[
-\boxed{T(n) = T(n/2) + c}
+T(n) = T(n/2) + c
 \]
 
 Where \(c\) represents the constant work performed during each recursive call.
